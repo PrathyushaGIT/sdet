@@ -2,25 +2,25 @@ package suiteCRM;
 
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class activity_3 {
+public class activity_1 {
 	
   WebDriver driver;
   
   @Test
-  public void Get_copyright_text() {
-	  
-	  WebElement copyrighttext = driver.findElement(By.id("admin_options"));	  
-	  System.out.println("Printing the first copyright text to the console: " +copyrighttext.getText());
+  public void Verify_website_title() {
+	  String title = driver.getTitle();
+	  System.out.println("Title of Page is: " + title);
 	  driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
-  }
+	  Assert.assertEquals(driver.getTitle(), "SuiteCRM");  	  
+	  System.out.println("'SuiteCRM' matches with tile of page: " + driver.getTitle());
+  } 
   
   @BeforeMethod
   public void beforemethod() {
@@ -35,5 +35,5 @@ public class activity_3 {
 	  driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
 	  driver.close();
   }
-
+  
 }

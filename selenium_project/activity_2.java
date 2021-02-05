@@ -25,7 +25,7 @@ public class activity_2 {
 	  @BeforeMethod
 	  public void beforemethod() {
 		  
-		  System.setProperty("webdriver.gecko.driver","C:\\Users\\UdayVerma\\Desktop\\SDET\\geckodriver-v0.29.0-win64\\geckodriver.exe");
+		  System.setProperty("webdriver.gecko.driver","C:\\Users\SarnaPrathyusha\\Desktop\\SDET\\geckodriver-v0.29.0-win64\\geckodriver.exe");
 		  driver = new FirefoxDriver();
 		  driver.get("http://alchemy.hguy.co/crm");
 		  driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
